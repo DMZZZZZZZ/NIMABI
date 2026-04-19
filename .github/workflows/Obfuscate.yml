@@ -1,8 +1,8 @@
 name: Build Obfuscate BPB Panel
 
-on:
+于:
   push:
-    branches:
+    分支:
       - main
   schedule:
         # Runs everyday at 1:00 AM
@@ -30,7 +30,7 @@ jobs:
 
       - name: Clone BPB workjs
         run: |
-          wget -O origin.js https://raw.githubusercontent.com/bia-pain-bache/BPB-Worker-Panel/refs/heads/main/build/unobfuscated-worker.js
+          wget -O origin.js https://raw.githubusercontent.com/bia-pain-bache/BPB-Worker-Panel/main/build/unobfuscated-worker.js
       
       - name: Obfuscate BPB worker js
         run: |
@@ -51,7 +51,7 @@ jobs:
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          branch: main
+          分支: main
           commit_message: ':arrow_up: update latest bpb panel'
           commit_author: 'github-actions[bot] <github-actions[bot]@users.noreply.github.com>'
           push_options: '--set-upstream'
